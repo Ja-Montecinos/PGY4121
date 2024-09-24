@@ -8,5 +8,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <ion-img src="/assets/QR.PNG" *ngIf="mostrarImagen"></ion-img>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="camera" (click)="showImage()"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </ion-content>

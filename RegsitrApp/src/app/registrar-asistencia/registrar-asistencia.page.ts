@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registrar-asistencia.page.scss'],
 })
 export class RegistrarAsistenciaPage implements OnInit {
-
+  mostrarImagen: boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
-
+showImage(){
+  this.mostrarImagen = !this.mostrarImagen;
+}
 }
