@@ -23,7 +23,7 @@ password : string;
 
 async funcionIngresar()
 {
- if ( this.usuario=="Usuario1" || this.password=="MiClav3")
+ if ( this.usuario=="Usuario1" && this.password=="MiClav3")
   {
     this.router.navigate(['/inicio'])
   }
@@ -39,4 +39,20 @@ async funcionIngresar()
   )
     await alerta.present();
   }
-}}
+
+
+}
+async funcionRestablecer()
+{
+  const alerta = await this.alertController.create
+  (
+    {
+    header:"Restablecer Contraseña",
+    message:"Hemos enviado un correo con los pasos a seguir para restablecer tu contraseña "+this.usuario,
+    buttons: ['Ok']
+  }
+)
+  await alerta.present();
+}
+}
+

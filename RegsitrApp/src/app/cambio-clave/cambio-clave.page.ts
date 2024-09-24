@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cambio-clave',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CambioClavePage implements OnInit {
 
-  constructor() { }
+  constructor(private alertController : AlertController) { }
 
   ngOnInit() {
   }
-
+async funcionInformacion(){
+  const alerta = await this.alertController.create
+  (
+    {
+    header:"Cambio de clave",
+    message:"En esta pagina podras cambiar la contraseña de tu cuenta RegistrApp",
+    buttons: ['Entendido']
+  }
+)
+  await alerta.present();
+}
 }
