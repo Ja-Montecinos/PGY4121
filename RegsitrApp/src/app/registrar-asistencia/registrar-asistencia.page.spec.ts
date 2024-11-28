@@ -5,13 +5,20 @@ describe('RegistrarAsistenciaPage', () => {
   let component: RegistrarAsistenciaPage;
   let fixture: ComponentFixture<RegistrarAsistenciaPage>;
 
-  beforeEach(() => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [RegistrarAsistenciaPage],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RegistrarAsistenciaPage);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+  });
+  it ('Imagen inicializada en falso', () => {
+    expect(component.mostrarImagen).toBeFalse();
+  });
+  it ('Mostrar imagen', () => {
+    component.showImage();
+    expect(component.mostrarImagen).toBeTrue();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+})
